@@ -1,5 +1,6 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import Background from './Background'
 
 type Props = {}
 
@@ -17,7 +18,12 @@ function Hero({}: Props) {
 
 
   return (
-    <div>
+    <div className='h-screen flex flex-col space-y-8 items-center justify-center'>
+        <Background />
+        <img 
+            src='https://avatars.githubusercontent.com/u/56556101?v=4'
+            className='relative rounded-full h-32 w-32 mx-auto object-cover'
+        />
         <h2 className='text-4xl font-semibold'>
             <span>
                 {text}
