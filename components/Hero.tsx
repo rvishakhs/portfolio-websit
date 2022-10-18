@@ -27,8 +27,8 @@ function Hero({}: Props) {
         />
 
         <h2  className='text-gray-500 font-semibold pb-2 tracking-[15px] text-sm uppercase '>Web developer </h2>
-            <h2 className='text-4xl font-semibold px-2'>
-                <span className='mr-3'>
+            <h2 className='text-4xl font-semibold px-2 z-20'>
+                <span className='mr-3 '>
                     {text}
                 </span>
                     <Cursor cursorColor='#FF0000'/>
