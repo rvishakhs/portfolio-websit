@@ -22,7 +22,7 @@ const Experience = (props: Props) => {
     >
         <h3 className='absolute top-14 uppercase tracking-[15px] md:tracking-[20px]  text-gray-500 text-2xl pb-4' >Experience</h3>
 
-        <div className='w-full space-x-5 p-10 snap-x snap-mandatory  overflow-x-scroll flex mt-8'>    
+        <div className='w-full space-x-5 p-10 snap-x snap-mandatory overflow-x-scroll flex mt-8'>    
             <ExperienceCard />
             <ExperienceCard />
             <ExperienceCard />
