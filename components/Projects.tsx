@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -17,8 +18,22 @@ const Projects = (props: Props) => {
 
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
             {projects.map((project, index ) =>(
-                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-start p-20 md:p-44 h-screen '>
-                    <img 
+                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-start mt-24 p-20 md:p-44 h-screen '>
+                    <motion.img 
+                                initial={{
+                                y: -200,
+                                opacity:0
+                            }}
+                
+                            transition={{
+                                duration:1
+                            }}
+                
+                            whileInView ={{
+                                opacity:1,
+                                y:0
+                            }}
+
                         src='https://miro.medium.com/max/1400/1*8BtlgpxyjOPaLZXO6pVD0Q.jpeg'
                         alt=' '
                         className='w-96 h-72 object-fill'
