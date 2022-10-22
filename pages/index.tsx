@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About'
+import Contact from '../components/Contact'
 import Experience from '../components/Experience'
 import Header from "../components/Header"
 import Hero from '../components/Hero'
@@ -16,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Header  */}
-      <Header />  
+         <Header />  
       {/* Hero */}
         <section id='hero' className='snap-start'>
           <Hero />
@@ -37,7 +38,10 @@ const Home: NextPage = () => {
         <section id='projects' className='snap-center'>
           <Projects />
         </section>
-      
+      {/* Project section */}
+        <section id='contact' className='snap-end'>
+          <Contact />
+        </section>
     
     </div>
   )

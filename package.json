@@ -10,6 +10,7 @@
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-icons": "^4.6.0",
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.15.0",
     "typewriter-effect": "^2.19.0"

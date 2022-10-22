@@ -6,4 +6,10 @@
     .herobtn {
         @apply md:px-6 px-2  py-2 border border-[#242424] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 
      }
+    .herobtnsubmit {
+        @apply md:px-6 px-2  py-2 border border-[#5e611d] rounded-full uppercase text-sm tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 
+     }
+     .textarea {
+        @apply outline-none bg-slate-400/10 px-3 py-2 rounded-md border-b border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A] focus:text-[#F7AB0A]/50 hover:border-[#F7AB0A]/30 focus:font-semibold
+     }
 }
