@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Experience from '../components/Experience'
@@ -42,6 +43,18 @@ const Home: NextPage = () => {
         <section id='contact' className='snap-end'>
           <Contact />
         </section>
+
+      {/* Profile btn */}
+      <Link href="#hero">
+        <footer className='sticky cursor-pointer bottom-5 w-full '>
+          <div className='flex items-center justify-center' >
+            <img 
+              src='https://w7.pngwing.com/pngs/780/57/png-transparent-node-js-javascript-database-mongodb-native-miscellaneous-text-trademark.png'
+              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer animate-pulse'
+            />
+          </div>
+        </footer>
+      </Link>
     
     </div>
   )
