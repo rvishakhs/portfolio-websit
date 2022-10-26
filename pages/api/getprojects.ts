@@ -5,12 +5,12 @@ import { project, } from "../../typings";
 
 
 const query = groq `
-    *[_type == "projects"] 
+    *[_type == "project"] 
 `;
 
 
 type Data = {
-    projects: project[];
+    project: project[];
 }
 
 export default async function handler(
@@ -18,8 +18,8 @@ export default async function handler(
     res: NextApiResponse<Data>
   ) {
       
-    const projects: project[] = await sanityClient.fetch(query);
-    res.status(200).json({ projects })
+    const project: project[] = await sanityClient.fetch(query);
+    res.status(200).json({ project })
   }
 
   
