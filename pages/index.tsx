@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps, GetStaticProps,  NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,22 +10,30 @@ import Header from "../components/Header"
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+
+import {experience, postInfo, project, skill} from "../typings"
 import { Fetchexperience } from '../utils/Fetchexperience'
 import { FetchpostInfo } from '../utils/FetchpostInfo'
 import { Fetchprojects } from '../utils/Fetchprojects'
 import { Fetchskills } from '../utils/Fetchskills'
-import {experience, postInfo, project, skill} from "../typings"
 
 type Props = {
-  pageInfo:  postInfo
+  postInfo:  postInfo
   experience : experience,
   skills : skill,
   projects : project
 }
 
-const Home = ({pageInfo, experience, skills, projects}: Props) => {
+const Home = ({  postInfo,
+  experience,
+  skills,
+  projects}: Props) => {
 
-  console.log("");
+  console.log(experience);
+  console.log(postInfo);
+  console.log(skills);
+  console.log(projects);
+  console.log("hai all");
 
 
   return (
@@ -79,24 +87,20 @@ const Home = ({pageInfo, experience, skills, projects}: Props) => {
 
 export default Home
 
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: postInfo[] = await FetchpostInfo();
-  const experience: experience[] = await Fetchexperience();
-  const skills: skill[] = await  Fetchskills();
-  const projects: project[] = await Fetchprojects();
+export const GetStaticProps: GetStaticProps<Props> = async () => {
+  const postInfo : postInfo[] = await FetchpostInfo();
+  const experience : experience[] = await Fetchexperience();
+  const skills : skill[] = await Fetchskills();
+  const projects : project[] = await Fetchprojects();
 
   return {
-    props: {
-      pageInfo,
+    props : {
+      postInfo,
       experience,
       skills,
-      projects,
-    },
-    revalidate : 10,
+      projects
+    }
   }
 
 
-
 }
-

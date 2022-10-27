@@ -3,7 +3,7 @@ import {project} from "../typings"
 
 export const Fetchprojects = async() => {
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/getprojects`);
+    const res = await fetch(`http://localhost:3000/api/getprojects`);
 
     const data = await res.json()
 
