@@ -10,7 +10,7 @@ const query = groq `
 
 
 type Data = {
-    postinfo: postInfo[];
+    postinfo: postInfo;
 }
 
 export default async function handler(
@@ -18,7 +18,7 @@ export default async function handler(
     res: NextApiResponse<Data>
   ) {
       
-    const postinfo: postInfo[] = await sanityClient.fetch(query);
+    const postinfo: postInfo = await sanityClient.fetch(query);
     res.status(200).json({ postinfo })
   }
 

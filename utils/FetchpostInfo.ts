@@ -7,7 +7,7 @@ export const FetchpostInfo = async() => {
 
     const data = await res.json()
 
-    const postInfo: postInfo[] = data.postInfo
+    const postInfo: postInfo[] = data.postinfo
 
     console.log(postInfo);
     

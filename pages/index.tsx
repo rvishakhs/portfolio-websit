@@ -1,4 +1,4 @@
-import type { GetStaticProps, GetStaticProps,  NextPage } from 'next'
+import type { GetStaticProps,   NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -87,11 +87,11 @@ const Home = ({  postInfo,
 
 export default Home
 
-export const GetStaticProps: GetStaticProps<Props> = async () => {
-  const postInfo : postInfo[] = await FetchpostInfo();
-  const experience : experience[] = await Fetchexperience();
-  const skills : skill[] = await Fetchskills();
-  const projects : project[] = await Fetchprojects();
+export const getStaticProps: GetStaticProps<Props> = async() =>  {
+  const postInfo : postInfo[] = await FetchpostInfo() ;
+  const experience : experience[] = (await Fetchexperience() || []);
+  const skills : skill[] = (await Fetchskills() || []);
+  const projects : project[] = (await Fetchprojects() || []);
 
   return {
     props : {
