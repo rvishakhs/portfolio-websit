@@ -24,17 +24,7 @@ type Props = {
   projects : project
 }
 
-const Home = ({  postInfo,
-  experience,
-  skills,
-  projects}: Props) => {
-
-  console.log(experience);
-  console.log(postInfo);
-  console.log(skills);
-  console.log(projects);
-  console.log("hai all");
-
+const Home = ({  postInfo, experience, skills, projects}: Props) => {
 
   return (
     <div className="bg-[rgb(36,36,36)] h-screen text-white snap-y scrollbar scrollbar-thin scrollbar-track-gray-500 scrollbar-thumb-[#F7AB0A] snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
@@ -99,8 +89,11 @@ export const getStaticProps: GetStaticProps<Props> = async() =>  {
       experience,
       skills,
       projects
-    }
-  }
+    },
 
+    revalidate : 10
+
+  }
+ 
 
 }
