@@ -40,9 +40,9 @@ const ExperienceCard = ({experience}: Props) => {
             <h2 className='text-2xl font-light text-center'>{experience.jobTitle}</h2>
             <p className='mx-auto font-bold text-lg '>{experience.companyImage}</p>
             <div className='flex space-x-2'>
-                {experience.technologies.map((technology : any) => (
+                {experience.technologies.map((technology, index) => (
                     <img 
-                        key={technology._id}
+                        key={index}
                         src= {urlFor(technology.image).url()}
                         alt="" 
                         className='h-8 w-8 rounded-full'

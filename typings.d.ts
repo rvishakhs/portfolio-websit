@@ -26,6 +26,7 @@ export interface postInfo extends Sanitybody {
     phoneNumber: string;
     profilePic: image;
     role: string;
+    pageinfo : any
 }
 
 export interface skill extends Sanitybody {

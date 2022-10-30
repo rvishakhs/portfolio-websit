@@ -1,22 +1,24 @@
 import React from 'react'
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { postInfo } from '../typings';
 
 
 
 
-type Props = {}
+type Props = {
+    pageinfo : postInfo[],
+}
 
 
 type Inputs = {
     name: string,
     mobile: number,
     email: string,
-    message:string
-
+    message:string,
   };
 
-const Contact = (props: Props) => {
+const Contact = ({pageinfo}: Props) => {
 
     const { register, handleSubmit} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => console.log(formData);
@@ -30,15 +32,15 @@ const Contact = (props: Props) => {
             <div className='space-y-6 mt-8'>
                 <div className='flex items-center align-middle text-center justify-center space-x-6'>
                     <HiPhone className=' text-2xl text-[#F7AB0A]'/>
-                    <p className='text-xl font-semibold text-center'>+44 7442005972</p>
+                    <p className='text-xl font-semibold text-center'>{pageinfo[0].phoneNumber}</p>
                 </div>
                 <div className='flex items-center align-middle text-center justify-center space-x-6'>
                     <HiMail className=' text-2xl text-[#F7AB0A]'/>
-                    <p className='text-xl font-semibold text-center'>Rvishakhs@gmail.com</p>
+                    <p className='text-xl font-semibold text-center'>{pageinfo[0].email}</p>
                 </div>
                 <div className='flex items-center align-middle text-center justify-center space-x-6'>
                     <HiLocationMarker className=' text-2xl text-[#F7AB0A]'/>
-                    <p className='text-xl font-semibold text-center'>63, Devonay Road, London</p>
+                    <p className='text-xl font-semibold text-center'>{pageinfo[0].address}</p>
                 </div>
             </div>
 
