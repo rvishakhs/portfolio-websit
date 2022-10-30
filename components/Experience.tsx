@@ -29,7 +29,7 @@ const Experience = ({experience}: Props) => {
             {experience.map((exp) => (
                 <ExperienceCard 
                     key={exp._id}
-                    data = {exp}
+                    experience = {exp}
                 />
             ) )}
 

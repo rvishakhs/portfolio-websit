@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { project } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+    projects : project[]
+}
 
-const Projects = (props: Props) => {
-
-    const projects = [1,2,3,4,5]
+const Projects = ({projects}: Props) => {
 
   return (
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
@@ -18,7 +20,7 @@ const Projects = (props: Props) => {
 
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-thin scrollbar-thumb-[#F7AB0A] '>
             {projects.map((project, index ) =>(
-                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-start mt-24 p-20 md:p-44 h-screen  '>
+                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-start mt-10 md:mt-0 p-20 md:p-44 h-screen  '>
                     <motion.img 
                                 initial={{
                                 y: -200,
@@ -34,20 +36,22 @@ const Projects = (props: Props) => {
                                 y:0
                             }}
 
-                        src='https://miro.medium.com/max/1400/1*8BtlgpxyjOPaLZXO6pVD0Q.jpeg'
+                        src={urlFor(project.image).url()}
                         alt=' '
-                        className='w-96 h-72 object-fill'
+                        className='w-72 h-56 md:w-96 md:h-72 object-fill'
                     />
                     <div className=''>
                         <h4 className='text-2xl font-semibold text-center'>
-                            <span className='underline decoration-[#F7AB0A]'>Case study {index + 1} of {projects.length}  </span> {" "} :
-                            Netflix Clone
+                            <span className='underline decoration-[#F7AB0A]'>Case study {index + 1} of {projects.length}  </span> {" "} : {" "}
+                            {project.tittle}
                         </h4>
                     </div>
 
+                    <p className='text-sm text-justify'>{project.summary}</p>
+
                     <div className=''>
                         <Link href="#projects">
-                           <button className='herobtn'>More details</button>
+                           <button className='herobtn'>Visit </button>
                         </Link>
                     </div>
 

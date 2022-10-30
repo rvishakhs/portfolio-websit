@@ -1,10 +1,13 @@
 import React from 'react'
 import Skill from './Skill'
 import { motion } from 'framer-motion'
+import { skill } from '../typings'
 
-type Props = {}
+type Props = {
+    skills : skill
+}
 
-const Skills = (props: Props) => {
+const Skills = ({skills}: Props) => {
   return (
     <motion.div 
 
@@ -27,19 +30,12 @@ const Skills = (props: Props) => {
         <h4 className='absolute top-28 uppercase tracking-[3px] text-gray-500 text-sm mb-6'>Hover over a skill for proficency</h4>
 
         <div className='grid grid-cols-4 gap-5 top-6'>
-            <Skill direction={true}/>
-            <Skill direction={true}/>
-            <Skill direction={true}/>
-            <Skill direction={true}/>
-            <Skill direction={true}/>
-            <Skill direction={false}/>
-            <Skill direction={false}/>
-            <Skill direction={false}/>
-            <Skill direction={false}/>
-            <Skill direction={false}/>
-            <Skill direction={false}/>
-
-
+            {skills.map((skill : any) =>(
+                <Skill 
+                    direction={true}
+                    data={skill}
+                />
+            ))}
         </div>
 
 

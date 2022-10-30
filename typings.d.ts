@@ -3,6 +3,7 @@ interface Sanitybody {
     _id: string;
     _rev: string;
     _updatedAt: string;
+    otherProp?: any;
 }
 
 interface  image {
@@ -32,6 +33,7 @@ export interface skill extends Sanitybody {
     image  : image;
     progress : number;
     tittle : string;
+    map : any
 }
 
 export interface project extends Sanitybody {
@@ -51,7 +53,7 @@ export interface experience extends Sanitybody {
     dateEnded: string;
     dateStarted : string;
     jobTitle    : string;
-    profilePic : image; 
+    profilePic : any
     isCurrentlyWorkingHere : boolean;
     technologies: skill[];
 

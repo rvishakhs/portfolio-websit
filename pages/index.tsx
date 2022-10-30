@@ -18,16 +18,16 @@ import { Fetchprojects } from '../utils/Fetchprojects'
 import { Fetchskills } from '../utils/Fetchskills'
 
 type Props = {
-  postInfo:  postInfo
-  experience : experience,
+  postInfo:  postInfo[]
+  experience : experience[],
   skills : skill,
-  projects : project
+  projects : project[]
 }
 
 const Home = ({  postInfo, experience, skills, projects}: Props) => {
 
-  console.log(experience);
-  console.log(skills);
+console.log(projects);
+
   
   
 
@@ -59,13 +59,17 @@ const Home = ({  postInfo, experience, skills, projects}: Props) => {
         </section>
       {/* Skill section */}
         <section id='skills' className='snap-center'>
-          <Skills />
+          <Skills 
+            skills = {skills}
+          />
         </section>
       {/* Project section */}
         <section id='projects' className='snap-center'>
-          <Projects />
+          <Projects 
+            projects = {projects}
+          />
         </section>
-      {/* Project section */}
+      {/* Contact section */}
         <section id='contact' className='snap-end'>
           <Contact />
         </section>
