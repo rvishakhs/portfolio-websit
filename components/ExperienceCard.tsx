@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { experience } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+    data : experience[]
+}
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ({data}: Props) => {
   return (
     <article className='flex flex-col rounded-lg items-center snap-center bg-[#292929] flex-shrink-0 w-[400px] md:w-[500px] xl:w-[600px] p-6
     opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200'>
@@ -28,18 +32,23 @@ const ExperienceCard = (props: Props) => {
 
 
         
-            src='https://assets-global.website-files.com/603fea6471d9d8559d077603/6092b7514135708162a4be92_Favicon%20256.png'
+            src={urlFor(data.profilePic).url()}
             className='w-32 h-32 mx-auto rounded-full object-cover object-center '
         />
         <div className='space-y-2 px-0 md:px-10'>
-            <h2 className='text-2xl font-light'>Freelance Developer</h2>
-            <p className='mx-auto font-bold text-lg '>Upwork</p>
+            <h2 className='text-2xl font-light text-center'>{data.jobTitle}</h2>
+            <p className='mx-auto font-bold text-lg '>{data.companyImage}</p>
             <div className='flex space-x-2'>
-                <img 
-                    src="https://i.pinimg.com/736x/28/75/3d/28753ddf79d70042ba86564947e13bf5.jpg" 
-                    alt="" 
-                    className='h-8 w-8 rounded-full'
-                />
+                {data.technologies.map((technology : any) => (
+                    <img 
+                        key={technology._id}
+                        src= {urlFor(technology.image).url()}
+                        alt="" 
+                        className='h-8 w-8 rounded-full'
+                    />
+                ))}
+
+
                 <img 
                     src="https://i.pinimg.com/736x/28/75/3d/28753ddf79d70042ba86564947e13bf5.jpg" 
                     alt="" 

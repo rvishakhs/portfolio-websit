@@ -1,10 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import ExperienceCard from './ExperienceCard'
+import { experience } from '../typings'
 
-type Props = {}
+type Props = {
+    experience : experience[]
+}
 
-const Experience = (props: Props) => {
+const Experience = ({experience}: Props) => {
   return (
     <motion.div
         initial={{
@@ -23,13 +26,12 @@ const Experience = (props: Props) => {
         <h3 className='absolute top-9 uppercase tracking-[15px] md:tracking-[20px]  text-gray-500 text-2xl pb-4' >Experience</h3>
 
         <div className='w-full space-x-20 p-10 snap-x snap-mandatory overflow-x-scroll scrollbar scrollbar-thin scrollbar-thumb-[#F7AB0A] flex mt-12'>    
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
+            {experience.map((exp) => (
+                <ExperienceCard 
+                    key={exp._id}
+                    data = {exp}
+                />
+            ) )}
 
         </div>
         
