@@ -91,11 +91,11 @@ console.log(projects);
 
 export default Home
 
-export const getStaticProps: GetStaticProps<Props> = async() =>  {
+export const getStaticProps: GetStaticProps = async() =>  {
   const postInfo : postInfo[] = await FetchpostInfo() ;
-  const experience : experience[] = (await Fetchexperience() || []);
-  const skills : skill[] = (await Fetchskills() || []);
-  const projects : project[] = (await Fetchprojects() || []);
+  const experience : experience[] = (await Fetchexperience());
+  const skills : skill[] = (await Fetchskills());
+  const projects : project[] = (await Fetchprojects());
 
   return {
     props : {
