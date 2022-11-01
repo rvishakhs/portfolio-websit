@@ -65,7 +65,7 @@ export default {
       name: "points",
       tittle: "Ponits",
       type: "array",
-      of:[{type: "reference"}], 
+      of:[{type: "string"}], 
     },
   ],
 

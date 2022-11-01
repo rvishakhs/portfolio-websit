@@ -57,5 +57,6 @@ export interface experience extends Sanitybody {
     profilePic : any
     isCurrentlyWorkingHere : boolean;
     technologies: skill[];
+    points : string[];
 
 }

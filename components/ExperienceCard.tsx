@@ -40,41 +40,23 @@ const ExperienceCard = ({experience}: Props) => {
             <h2 className='text-2xl font-light text-center'>{experience.jobTitle}</h2>
             <p className='mx-auto font-bold text-lg '>{experience.companyImage}</p>
             <div className='flex space-x-2'>
-                {experience.technologies.map((technology, index) => (
+                {/* {experience.technologies.map((technology, index) => (
                     <img 
                         key={index}
-                        src= {urlFor(technology.image).url()}
+                        src= {urlFor(technology).url()}
                         alt="" 
                         className='h-8 w-8 rounded-full'
                     />
-                ))}
-
-
-                <img 
-                    src="https://i.pinimg.com/736x/28/75/3d/28753ddf79d70042ba86564947e13bf5.jpg" 
-                    alt="" 
-                    className='h-8 w-8 rounded-full'
-                />
-                <img 
-                    src="https://i.pinimg.com/736x/28/75/3d/28753ddf79d70042ba86564947e13bf5.jpg" 
-                    alt="" 
-                    className='h-8 w-8 rounded-full'
-                />
+                ))} */}
             </div>
 
             <p className='uppercase py-5 text-gray-300'>{new Date(experience.dateStarted).toDateString()} {"-"} { experience.isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()} </p>
-{/* 
             <ul className='list-disc space-y-4 ml-5 text-sm'>
-                <li>Bullent Points</li>
-                <li>Bullent Points</li>
-                <li>Bullent Points</li>
-                <li>Bullent Points</li>
-                <li>Bullent Points</li>
-            </ul> */}
+                {experience.points.map((point: any, i: any) => (
+                    <li key={i}>{point}</li>
+                ))}
+            </ul>
 
-            <p className='space-y-4 ml-5 text-sm'>
-                {experience.company}
-            </p>
         
         </div>
 
