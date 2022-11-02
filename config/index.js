@@ -1,0 +1,1 @@
+export const server = 'portfolio-websit-kaplqhk78-srvishakh-gmailcom.vercel.app';
