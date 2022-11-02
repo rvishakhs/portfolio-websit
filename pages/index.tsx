@@ -10,6 +10,7 @@ import Header from "../components/Header"
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+import { urlFor } from '../sanity'
 
 import {experience, postInfo, project, skill} from "../typings"
 import { Fetchexperience } from '../utils/Fetchexperience'
@@ -78,7 +79,7 @@ console.log(projects);
         <footer className='sticky cursor-pointer bottom-5 w-full '>
           <div className='flex items-center justify-center' >
             <img 
-              src='https://w7.pngwing.com/pngs/780/57/png-transparent-node-js-javascript-database-mongodb-native-miscellaneous-text-trademark.png'
+              src="https://cdn.sanity.io/images/vfoyh3rx/production/afbeb70b0f4d3b8f99abf231023fc92b7407196c-3024x3389.jpg"
               className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer animate-pulse'
             />
           </div>

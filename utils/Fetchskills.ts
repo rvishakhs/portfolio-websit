@@ -9,8 +9,6 @@ export const Fetchskills = async() => {
 
     const skills: skill[] = data.skills
 
-    console.log(skills);
-
     return skills
     
 }

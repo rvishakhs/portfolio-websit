@@ -9,7 +9,6 @@ export const Fetchprojects = async() => {
 
     const projects: project[] = data.project
 
-    console.log(projects);
     
 
     return projects
