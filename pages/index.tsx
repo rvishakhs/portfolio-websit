@@ -26,8 +26,6 @@ type Props = {
 }
 
 
-
-
 const Home = ({  postInfo, experience, skills, projects}: Props) => {
 
 
