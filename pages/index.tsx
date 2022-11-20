@@ -1,4 +1,4 @@
-import type { GetStaticProps,   NextPage } from 'next'
+import type { GetServerSideProps} from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ import Header from "../components/Header"
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-import { urlFor } from '../sanity'
+
 
 import {experience, postInfo, project, skill} from "../typings"
 import { Fetchexperience } from '../utils/Fetchexperience'
@@ -30,7 +30,7 @@ const Home = ({  postInfo, experience, skills, projects}: Props) => {
 
 
   return (
-    <div className="bg-[rgb(36,36,36)] h-screen text-white snap-y scrollbar scrollbar-thin scrollbar-track-gray-500 scrollbar-thumb-[#F7AB0A] snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
+    <div className="bg-[rgb(36,36,36)] h-screen text-white snap-y scrollbar  scrollbar-track-gray-500 scrollbar-thumb-[#F7AB0A] snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       <Head>
         <title>Visakh's Portfolio</title>
       </Head>
@@ -92,7 +92,7 @@ const Home = ({  postInfo, experience, skills, projects}: Props) => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async() =>  {
+export const getServerSideProps : GetServerSideProps = async() =>  {
   const postInfo : postInfo[] = await FetchpostInfo() ;
   const experience : experience[] = (await Fetchexperience());
   const skills : skill[] = (await Fetchskills());
